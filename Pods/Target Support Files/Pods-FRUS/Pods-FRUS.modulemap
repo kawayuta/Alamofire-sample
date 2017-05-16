@@ -1,0 +1,6 @@
+framework module Pods_FRUS {
+  umbrella header "Pods-FRUS-umbrella.h"
+
+  export *
+  module * { export * }
+}
