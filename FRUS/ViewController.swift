@@ -11,52 +11,59 @@ import Alamofire
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var teamTitle: UILabel!
-    @IBOutlet weak var teamDATA: UILabel!
-    @IBOutlet weak var teamDATA_2: UILabel!
-    @IBOutlet weak var teamDATA_3: UILabel!
-    @IBOutlet weak var teamDATA_4: UILabel!
+    let adress:String = "http://192.168.1.23:7878"
+    
+    @IBOutlet weak var input_Value: UITextField!
+    @IBOutlet weak var input_Value2: UITextField!
+    @IBOutlet weak var notice: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-            Alamofire.request("http://192.168.122.143:3000/babies/1.json").responseJSON { response in
-            
-            // print(response.request ?? "ee")  // original URL request
-            // print(response.response ?? "ee") // HTTP URL response
-            // print(response.data ?? "ee")     // server data
-            // print(response.result)   // result of response serialization
-            let jsonDict = response.result.value as! NSDictionary
-            
-            print(jsonDict)
-            
-            let team_1 = jsonDict["team_1"] as! Int
-            let team_2 = jsonDict["team_2"] as! Int
-            let team_3 = jsonDict["team_3"] as! Int
-            let team_4 = jsonDict["team_4"] as! Int
-            
-            // print(team_1)
-            // print(team_2)
-            // print(team_3)
-            // print(team_4)
-            
-            self.teamTitle.text = "各チームの記録"
-            self.teamDATA.text = String(team_1)
-            self.teamDATA_2.text = String(team_2)
-            self.teamDATA_3.text = String(team_3)
-            self.teamDATA_4.text = String(team_4)
-
-            
-        }
-    
-    
+        self.input_Value.placeholder = "キーワード1を入力してください"
+        self.input_Value2.placeholder = "キーワード2を入力してください"
+        
+            Alamofire.request("\(adress)/inspis/1.json").responseJSON { response in
+                if let jsonDict = response.result.value as? NSDictionary {
+                    let word1:String? = String(describing: String(describing: jsonDict["keyword_1"]))
+                    let word2:String? = String(describing: String(describing: jsonDict["keyword_2"]))
+                }
+            }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
     }
-
+    
+    @IBAction func Post(_ sender: Any) {
+        
+        var parameters = [
+            "keyword_1": "",
+            "keyword_2": ""
+            ] as [String : Any]
+        
+        parameters["keyword_1"] = self.input_Value.text
+        parameters["keyword_2"] = self.input_Value2.text
+        
+        Alamofire.request("\(self.adress)/inspis.json", method: .post, parameters: ["inspi": parameters]).responseJSON {
+            response in
+            switch response.result {
+            case .success:
+                print(response)
+                self.notice.text = "投稿が完了しました。"
+                
+                break
+            case .failure(let error):
+                print(error)
+                self.notice.text = "投稿に失敗しました。"
+            }
+        }
+        
+    }
+    
 
 }
 
