@@ -44,8 +44,8 @@ class InspisCreateController: UIViewController {
     @IBAction func Post(_ sender: Any) {
         
         var parameters = [
-            "keyword_1": "",
-            "keyword_2": ""
+            "keyword_1": 0,
+            "keyword_2": 0
             ] as [String : Any]
       
         parameters["keyword_1"] = self.input_Value.text
