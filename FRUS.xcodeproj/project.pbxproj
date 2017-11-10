@@ -68,13 +68,21 @@
 				4D0A71BE1ECAE071000AF7B9 /* AppDelegate.swift */,
 				4D0A71C01ECAE071000AF7B9 /* ViewController.swift */,
 				4D0A71C21ECAE071000AF7B9 /* Main.storyboard */,
-				4D0D8C8F1FB55617009CC46C /* InspisCreateController.swift */,
-				4D0D8C911FB5562D009CC46C /* InspisShowController.swift */,
+				4D0D8C931FB5691A009CC46C /* Inspis */,
 				4D0A71C51ECAE071000AF7B9 /* Assets.xcassets */,
 				4D0A71C71ECAE071000AF7B9 /* LaunchScreen.storyboard */,
 				4D0A71CA1ECAE071000AF7B9 /* Info.plist */,
 			);
 			path = FRUS;
+			sourceTree = "<group>";
+		};
+		4D0D8C931FB5691A009CC46C /* Inspis */ = {
+			isa = PBXGroup;
+			children = (
+				4D0D8C911FB5562D009CC46C /* InspisShowController.swift */,
+				4D0D8C8F1FB55617009CC46C /* InspisCreateController.swift */,
+			);
+			path = Inspis;
 			sourceTree = "<group>";
 		};
 		D58295186865DF48F881678E /* Frameworks */ = {

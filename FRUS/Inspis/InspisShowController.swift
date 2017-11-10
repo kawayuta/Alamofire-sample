@@ -10,13 +10,16 @@ import UIKit
 import Alamofire
 
 class InspisShowController: UIViewController {
+    
+    @IBOutlet weak var result_keyword_1: UILabel!
+    @IBOutlet weak var result_keyword_2: UILabel!
     var parameters: [String : Any] = [:]
-    @IBOutlet weak var keyword_1: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        print(parameters["keyword_1"] as! String)
-        print(parameters["keyword_2"] as! String)
+        self.result_keyword_1.text = parameters["keyword_1"] as? String
+        self.result_keyword_2.text = parameters["keyword_2"] as? String
     }
     
     override func didReceiveMemoryWarning() {

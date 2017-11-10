@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -68,7 +67,6 @@
         <!--Inspis Show Controller-->
         <scene sceneID="SPx-IP-Z5f">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aau-Um-sFN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Diq-XW-1tO" customClass="InspisShowController" customModule="FRUS" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Jyx-Br-ZrK"/>
@@ -78,26 +76,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="q" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PuN-dd-eoX">
-                                <rect key="frame" x="96" y="70" width="183" height="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sY-ZP-psY">
+                                <rect key="frame" x="96" y="135" width="183" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQh-Pp-ic9">
+                                <rect key="frame" x="96" y="180" width="183" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="ETM-7v-9jo" firstAttribute="top" secondItem="PuN-dd-eoX" secondAttribute="bottom" constant="574" id="fXE-60-Uwv"/>
-                            <constraint firstItem="PuN-dd-eoX" firstAttribute="top" secondItem="Jyx-Br-ZrK" secondAttribute="bottom" constant="50" id="k3b-AJ-W4E"/>
-                            <constraint firstItem="PuN-dd-eoX" firstAttribute="leading" secondItem="Nc6-d5-g9q" secondAttribute="leadingMargin" constant="80" id="m42-Vl-HHJ"/>
-                            <constraint firstItem="PuN-dd-eoX" firstAttribute="centerX" secondItem="Nc6-d5-g9q" secondAttribute="centerX" id="mIs-yy-pGc"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0Hv-wF-ByF"/>
                     <connections>
-                        <outlet property="keyword_1" destination="PuN-dd-eoX" id="5as-yR-pBV"/>
+                        <outlet property="result_keyword_1" destination="5sY-ZP-psY" id="nYy-6o-eN0"/>
+                        <outlet property="result_keyword_2" destination="cQh-Pp-ic9" id="ZZx-80-qX3"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aau-Um-sFN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="728.79999999999995" y="36.431784107946029"/>
         </scene>

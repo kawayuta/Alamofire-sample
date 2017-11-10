@@ -64,7 +64,6 @@ class InspisCreateController: UIViewController {
                 self.notice.text = "投稿に失敗しました。"
             }
         }
-       
     }
     
     
