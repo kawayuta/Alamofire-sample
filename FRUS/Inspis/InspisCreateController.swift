@@ -12,7 +12,7 @@ import Alamofire
 
 class InspisCreateController: UIViewController {
     
-    let adress:String = "http://192.168.1.23:7878"
+    let adress:String = "http://127.0.0.1:3000"
     var params: [String : AnyObject] = [:]
     
     @IBOutlet weak var input_Value: UITextField!
@@ -58,6 +58,7 @@ class InspisCreateController: UIViewController {
                 print(response)
                 self.params = response.result.value as! Dictionary
                 self.performSegue(withIdentifier: "toInspisShow", sender: nil)
+                self.notice.text = "登録完了しました。"
                 break
             case .failure(let error):
                 print(error)
@@ -70,6 +71,7 @@ class InspisCreateController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let controller:InspisShowController = segue.destination as! InspisShowController
         controller.parameters = params
+        controller.notices = self.notice.text!
     }
     
     

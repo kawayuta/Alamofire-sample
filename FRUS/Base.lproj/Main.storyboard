@@ -96,11 +96,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4v-0s-r6K">
+                                <rect key="frame" x="122" y="72" width="130" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="0Hv-wF-ByF"/>
                     <connections>
+                        <outlet property="notice" destination="o4v-0s-r6K" id="tOc-TB-a4v"/>
                         <outlet property="result_keyword_1" destination="5sY-ZP-psY" id="nYy-6o-eN0"/>
                         <outlet property="result_keyword_2" destination="cQh-Pp-ic9" id="ZZx-80-qX3"/>
                     </connections>

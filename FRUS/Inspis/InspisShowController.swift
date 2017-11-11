@@ -13,6 +13,9 @@ class InspisShowController: UIViewController {
     
     @IBOutlet weak var result_keyword_1: UILabel!
     @IBOutlet weak var result_keyword_2: UILabel!
+    @IBOutlet weak var notice: UILabel!
+    
+    var notices:String = ""
     var parameters: [String : Any] = [:]
     
     override func viewDidLoad() {
@@ -20,6 +23,7 @@ class InspisShowController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.result_keyword_1.text = parameters["keyword_1"] as? String
         self.result_keyword_2.text = parameters["keyword_2"] as? String
+        self.notice.text = self.notices
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,5 +34,4 @@ class InspisShowController: UIViewController {
     
     
 }
-
 
