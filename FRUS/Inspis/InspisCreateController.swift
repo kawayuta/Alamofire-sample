@@ -15,9 +15,12 @@ class InspisCreateController: UIViewController {
     let adress:String = "http://127.0.0.1:3000"
     var params: [String : AnyObject] = [:]
     
+    @IBOutlet weak var notice: UILabel!
+    
     @IBOutlet weak var input_Value: UITextField!
     @IBOutlet weak var input_Value2: UITextField!
-    @IBOutlet weak var notice: UILabel!
+    @IBOutlet weak var input_Password: UITextField!
+    @IBOutlet weak var input_PasswordConfilm: UITextField!
     
     @IBOutlet weak var result_Value: UILabel!
     
@@ -26,8 +29,10 @@ class InspisCreateController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         if(view.restorationIdentifier == "new") {
-            self.input_Value.placeholder = "キーワード1を入力してください"
-            self.input_Value2.placeholder = "キーワード2を入力してください"
+            self.input_Value.placeholder = "Username"
+            self.input_Value2.placeholder = "MailAdress"
+            self.input_Password.placeholder = "Password"
+            self.input_PasswordConfilm.placeholder = "Password Confilm"
         } else if(view.restorationIdentifier == "result") {
             
         }
@@ -44,14 +49,18 @@ class InspisCreateController: UIViewController {
     @IBAction func Post(_ sender: Any) {
         
         var parameters = [
-            "keyword_1": 0,
-            "keyword_2": 0
+            "name": 0,
+            "email": 0,
+            "password": 0,
+            "password_confirmation": 0
             ] as [String : Any]
       
-        parameters["keyword_1"] = self.input_Value.text
-        parameters["keyword_2"] = self.input_Value2.text
+        parameters["username"] = self.input_Value.text
+        parameters["email"] = self.input_Value2.text
+        parameters["password"] = self.input_Password.text
+        parameters["password_confirmation"] = self.input_PasswordConfilm.text
         
-        Alamofire.request("\(self.adress)/inspis.json", method: .post, parameters: ["inspi": parameters]).responseJSON {
+        Alamofire.request("\(self.adress)/users/sign_up.json", method: .post, parameters: ["users": parameters]).responseJSON {
             response in
             switch response.result {
             case .success:
